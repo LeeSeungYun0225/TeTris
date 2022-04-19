@@ -12,7 +12,7 @@ public class TTMain extends JPanel
 	
 		JFrame frame = new JFrame("Tetris!");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setPreferredSize(new Dimension(1000,(IntClass.yNumber+5)*IntClass.BLOCKSIZE));
+		frame.setPreferredSize(new Dimension(600,(IntClass.yNumber+5)*IntClass.BLOCKSIZE));
 		frame.pack();
 		frame.getContentPane();
 		frame.setVisible(true);
