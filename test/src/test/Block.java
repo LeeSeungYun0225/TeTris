@@ -30,6 +30,16 @@ public class Block extends JLabel // 블록을 관리하는 클래스
 
 	}
 	
+	public void blockInit()
+	{
+		state =(int)(Math.random()*7); // 랜덤 블록 지정 
+		BlockColor();
+		setBlock();
+		
+		pt = new Point();
+		setBlockPosition();
+	}
+	
 	public Space[] getlbl()
 	{
 		return lbl;
