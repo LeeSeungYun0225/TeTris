@@ -20,22 +20,37 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 	private JButton btn, startButton; // startButton : 시작 버튼 / btn : 키 리스너를 받을 임의의 버튼 (사용하지는 않는다)
 	private JLabel backgroundLabel, next, holdLabel; // 다음 블록, 홀드 블록, 테트리스 배경 이미지 담을 라벨
 	private int i, holdChecker, shold , crush , finalCrush;
-	private boolean overChecker, playChecker, canStart, networkChecker, downChecker; // canStart : 시작 가능 여부 확인, playChecker : true이면 게임 진행중, false이면
+	private boolean overChecker, playChecker, canStart, networkChecker, messageChecker,winChecker,startChecker; // canStart : 시작 가능 여부 확인, playChecker : true이면 게임 진행중, false이면
 														// 게임 중단 / overCheck : 게임 오버 여부 확인 / networkChecker : 대전모드인지 확인  / downChcker 방금 블록을 다운시켯는지 확인 
+	private boolean endChecker;
 	private Thread play, gameoverAniThread;
 	private GameoverAnimation gameoverThread;
 	
 	private File gameoverSound,crushSound,backgroundSound; // 게임오버 , 파괴음 파일 , 클립 선언 
 	private Clip gameoverClip,crushClip,backgroundClip;
 
+	private int messageType = 0;
+	
+
 
 	public GamePlay() {
 		canStart = true;
 		startButton = new JButton(new ImageIcon("Start.png")); // 시작 알림 레이블
 		add(startButton);
+		networkChecker= false;
 		startButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				startButton();
+				if(networkChecker == false)
+				{
+					startButton();
+				}
+				else
+				{
+					messageChecker = true;
+					messageType = 2;
+					startButton.setVisible(false);
+				}
+				
 			}
 		});
 		startButton.setBounds(50, 150, 100, 50);
@@ -46,11 +61,13 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 		gameoverThread = new GameoverAnimation();
 		gameoverAniThread = new Thread(gameoverThread);
 
+		
+		endChecker = false;
 		playChecker = false;
 		overChecker = false;
 		networkChecker = false;
-		downChecker = false;
-
+		messageChecker = false;
+		winChecker = false;
 		shold = -1;
 		holdChecker = -1;
 		setLayout(null);
@@ -415,9 +432,8 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				overChecker = false;
 				System.out.println("GameOver");
 				gameoverAniThread = new Thread(gameoverThread);
-				gameoverAniThread.start();
-
-
+				gameoverAniThread.start();			
+				endChecker = true;
 				break;
 			}
 		}
@@ -689,12 +705,12 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				checkBreak(y);
 				y = i;
 				checkBreak(y);
-
+				throwNetworkData();
 				nextBlock();
 				holdChecker = -1;
 				setHoldLabel();
 				
-				throwNetworkData();
+				
 				
 			} else if (i == 0) {
 
@@ -714,11 +730,11 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				checkBreak(y);
 				y = 0;
 				checkBreak(y);
-
+				throwNetworkData();
 				nextBlock();
 				holdChecker = -1;
 				setHoldLabel();
-				throwNetworkData();
+
 			}
 
 			else {
@@ -749,11 +765,11 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				checkBreak(y);
 				y = i;
 				checkBreak(y);
-
+				throwNetworkData();
 				nextBlock();
 				holdChecker = -1;
 				setHoldLabel();
-				throwNetworkData();
+
 
 			} else if (i == 0) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(true);
@@ -772,11 +788,11 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				checkBreak(y);
 				y = 0;
 				checkBreak(y);
-
+				throwNetworkData();
 				nextBlock();
 				holdChecker = -1;
 				setHoldLabel();
-				throwNetworkData();
+
 
 			}
 
@@ -809,11 +825,11 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				checkBreak(y);
 				y = i;
 				checkBreak(y);
-
+				throwNetworkData();
 				holdChecker = -1;
 				setHoldLabel();
 				nextBlock();
-				throwNetworkData();
+
 
 			} else if (i == 0) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(true);
@@ -832,11 +848,11 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				checkBreak(y);
 				y = 0;
 				checkBreak(y);
-
+				throwNetworkData();
 				holdChecker = -1;
 				setHoldLabel();
 				nextBlock();
-				throwNetworkData();
+
 			}
 
 			else {
@@ -867,11 +883,11 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				checkBreak(y);
 				y = i;
 				checkBreak(y);
-
+				throwNetworkData();
 				holdChecker = -1;
 				setHoldLabel();
 				nextBlock();
-				throwNetworkData();
+
 				
 			} else if (i == 0) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(true);
@@ -890,10 +906,10 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				checkBreak(y);
 				y = 0;
 				checkBreak(y);
-
+				throwNetworkData();
 				nextBlock();
 				holdChecker = -1;
-				throwNetworkData();
+
 
 			} else {
 				currentBlock.sety(currentBlock.getPt().y + IntClass.BLOCKSIZE);
@@ -923,12 +939,11 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				checkBreak(y);
 				y = i;
 				checkBreak(y);
-
+				throwNetworkData();
 				holdChecker = -1;
 				setHoldLabel();
 				nextBlock();
-				
-				throwNetworkData();
+
 			} else if (i == 0) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(true);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(11);
@@ -946,12 +961,11 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				checkBreak(y);
 				y = 0;
 				checkBreak(y);
-
+				throwNetworkData();
 				nextBlock();
 				holdChecker = -1;
 				setHoldLabel();
 
-				throwNetworkData();
 			}
 
 			else {
@@ -982,13 +996,13 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				checkBreak(y);
 				y = i;
 				checkBreak(y);
-
+				throwNetworkData();
 				holdChecker = -1;
 				setHoldLabel();
 
 				nextBlock();
 				
-				throwNetworkData();
+
 			} else if (i == 0) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(true);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(13);
@@ -1006,12 +1020,11 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				checkBreak(y);
 				y = 0;
 				checkBreak(y);
-
+				throwNetworkData();
 				nextBlock();
 				holdChecker = -1;
 				setHoldLabel();
-				
-				throwNetworkData();
+
 
 			} else {
 				currentBlock.sety(currentBlock.getPt().y + IntClass.BLOCKSIZE);
@@ -1043,12 +1056,11 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				checkBreak(y);
 				y = i - 1;
 				checkBreak(y);
-
+				throwNetworkData();
 				holdChecker = -1;
 				setHoldLabel();
 				nextBlock();
-				
-				throwNetworkData();
+
 
 			} else if (i == 1) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(true);
@@ -1071,12 +1083,12 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				checkBreak(y);
 				y = 0;
 				checkBreak(y);
-
+				throwNetworkData();
 				nextBlock();
 				holdChecker = -1;
 				setHoldLabel();
 				
-				throwNetworkData();
+
 			} else {
 				currentBlock.sety(currentBlock.getPt().y + IntClass.BLOCKSIZE);
 				currentBlock.setBounds(currentBlock.getPt().x, currentBlock.getPt().y, IntClass.BLOCKSIZE * 4,
@@ -1108,12 +1120,12 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				checkBreak(y);
 				y = i - 1;
 				checkBreak(y);
-
+				throwNetworkData();
 				nextBlock();
 				holdChecker = -1;
 				setHoldLabel();
 				
-				throwNetworkData();
+
 			} else if (i == 1) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setState(true);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(5);
@@ -1133,12 +1145,12 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				checkBreak(y);
 				y = 0;
 				checkBreak(y);
-
+				throwNetworkData();
 				nextBlock();
 				holdChecker = -1;
 				setHoldLabel();
 				
-				throwNetworkData();
+
 			}
 
 			else {
@@ -1172,12 +1184,11 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				checkBreak(y);
 				y = i - 1;
 				checkBreak(y);
-
+				throwNetworkData();
 				nextBlock();
 				holdChecker = -1;
 				setHoldLabel();
-				
-				throwNetworkData();
+	
 			} else if (i == 1) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setState(true);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setType(7);
@@ -1197,12 +1208,12 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				checkBreak(y);
 				y = 0;
 				checkBreak(y);
-
+				throwNetworkData();
 				nextBlock();
 				holdChecker = -1;
 				setHoldLabel();
 				
-				throwNetworkData();
+			
 			} else {
 				currentBlock.sety(currentBlock.getPt().y + IntClass.BLOCKSIZE);
 				currentBlock.setBounds(currentBlock.getPt().x, currentBlock.getPt().y, IntClass.BLOCKSIZE * 4,
@@ -1235,12 +1246,11 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				checkBreak(y);
 				y = i;
 				checkBreak(y);
-
+				throwNetworkData();
 				nextBlock();
 				holdChecker = -1;
 				setHoldLabel();
 				
-				throwNetworkData();
 			} else if (i == 0) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(true);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(9);
@@ -1260,11 +1270,11 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				checkBreak(y);
 				y = 0;
 				checkBreak(y);
-
+				throwNetworkData();
 				nextBlock();
 				holdChecker = -1;
 				setHoldLabel();
-				throwNetworkData();
+				
 			} else {
 				currentBlock.sety(currentBlock.getPt().y + IntClass.BLOCKSIZE);
 				currentBlock.setBounds(currentBlock.getPt().x, currentBlock.getPt().y, IntClass.BLOCKSIZE * 4,
@@ -1293,12 +1303,12 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				checkBreak(y);
 				y = i;
 				checkBreak(y);
-
+				throwNetworkData();
 				nextBlock();
 				holdChecker = -1;
 				setHoldLabel();
 				
-				throwNetworkData();
+				
 			} else if (i == 0) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setState(true);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(9);
@@ -1316,11 +1326,11 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				checkBreak(y);
 				y = 0;
 				checkBreak(y);
-
+				throwNetworkData();
 				nextBlock();
 				holdChecker = -1;
 				setHoldLabel();
-				throwNetworkData();
+				
 			} else {
 				currentBlock.sety(currentBlock.getPt().y + IntClass.BLOCKSIZE);
 				currentBlock.setBounds(currentBlock.getPt().x, currentBlock.getPt().y, IntClass.BLOCKSIZE * 4,
@@ -1352,11 +1362,11 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				checkBreak(y);
 				y = i;
 				checkBreak(y);
-
+				throwNetworkData();
 				holdChecker = -1;
 				setHoldLabel();
 				nextBlock();
-				throwNetworkData();
+				
 			} else if (i == 0) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(true);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(9);
@@ -1376,11 +1386,11 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				checkBreak(y);
 				y = 0;
 				checkBreak(y);
-
+				throwNetworkData();
 				nextBlock();
 				holdChecker = -1;
 				setHoldLabel();
-				throwNetworkData();
+			
 			} else {
 				currentBlock.sety(currentBlock.getPt().y + IntClass.BLOCKSIZE);
 				currentBlock.setBounds(currentBlock.getPt().x, currentBlock.getPt().y, IntClass.BLOCKSIZE * 4,
@@ -1412,11 +1422,11 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				checkBreak(y);
 				y = i;
 				checkBreak(y);
-
+				throwNetworkData();
 				nextBlock();
 				holdChecker = -1;
 				setHoldLabel();
-				throwNetworkData();
+				
 			} else if (i == 0) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(true);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(11);
@@ -1436,11 +1446,11 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				checkBreak(y);
 				y = 0;
 				checkBreak(y);
-
+				throwNetworkData();
 				nextBlock();
 				holdChecker = -1;
 				setHoldLabel();
-				throwNetworkData();
+				
 			} else {
 				currentBlock.sety(currentBlock.getPt().y + IntClass.BLOCKSIZE);
 				currentBlock.setBounds(currentBlock.getPt().x, currentBlock.getPt().y, IntClass.BLOCKSIZE * 4,
@@ -1469,11 +1479,11 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				checkBreak(y);
 				y = i;
 				checkBreak(y);
-
+				throwNetworkData();
 				nextBlock();
 				holdChecker = -1;
 				setHoldLabel();
-				throwNetworkData();
+			
 
 			}
 
@@ -1494,12 +1504,12 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				checkBreak(y);
 				y = 0;
 				checkBreak(y);
-
+				throwNetworkData();
 				nextBlock();
 				holdChecker = -1;
 				setHoldLabel();
 				
-				throwNetworkData();
+				
 			} else {
 				currentBlock.sety(currentBlock.getPt().y + IntClass.BLOCKSIZE);
 				currentBlock.setBounds(currentBlock.getPt().x, currentBlock.getPt().y, IntClass.BLOCKSIZE * 4,
@@ -1529,12 +1539,12 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				checkBreak(y);
 				y = i;
 				checkBreak(y);
-
+				throwNetworkData();
 				nextBlock();
 				holdChecker = -1;
 				setHoldLabel();
 				
-				throwNetworkData();
+				
 			} else if (i == 0) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setState(true);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setType(11);
@@ -1554,12 +1564,12 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				checkBreak(y);
 				y = 0;
 				checkBreak(y);
-
+				throwNetworkData();
 				nextBlock();
 				holdChecker = -1;
 				setHoldLabel();
 				
-				throwNetworkData();
+				
 			} else {
 				currentBlock.sety(currentBlock.getPt().y + IntClass.BLOCKSIZE);
 				currentBlock.setBounds(currentBlock.getPt().x, currentBlock.getPt().y, IntClass.BLOCKSIZE * 4,
@@ -1591,13 +1601,13 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				checkBreak(y);
 				y = i - 1;
 				checkBreak(y);
-
+				throwNetworkData();
 				holdChecker = -1;
 				setHoldLabel();
 
 				nextBlock();
 				
-				throwNetworkData();
+				
 			} else if (i == 1) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(true);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(13);
@@ -1617,11 +1627,11 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				checkBreak(y);
 				y = 0;
 				checkBreak(y);
-
+				throwNetworkData();
 				nextBlock();
 				holdChecker = -1;
 				setHoldLabel();
-				throwNetworkData();
+				
 			} else {
 				currentBlock.sety(currentBlock.getPt().y + IntClass.BLOCKSIZE);
 				currentBlock.setBounds(currentBlock.getPt().x, currentBlock.getPt().y, IntClass.BLOCKSIZE * 4,
@@ -1652,13 +1662,13 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				checkBreak(y);
 				y = i - 1;
 				checkBreak(y);
-
+				throwNetworkData();
 				holdChecker = -1;
 				setHoldLabel();
 
 				nextBlock();
 				
-				throwNetworkData();
+				
 			} else if (i == 1) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setState(true);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setType(13);
@@ -1676,12 +1686,12 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				checkBreak(y);
 				y = 0;
 				checkBreak(y);
-
+				throwNetworkData();
 				nextBlock();
 				holdChecker = -1;
 				setHoldLabel();
 				
-				throwNetworkData();
+
 			} else {
 				currentBlock.sety(currentBlock.getPt().y + IntClass.BLOCKSIZE);
 				currentBlock.setBounds(currentBlock.getPt().x, currentBlock.getPt().y, IntClass.BLOCKSIZE * 4,
@@ -1714,12 +1724,14 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				checkBreak(y);
 				y = i - 1;
 				checkBreak(y);
+				
+				throwNetworkData();
 				holdChecker = -1;
 				setHoldLabel();
 
 				nextBlock();
 				
-				throwNetworkData();
+	
 			} else if (i == 1) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setState(true);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setType(13);
@@ -1739,12 +1751,11 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				checkBreak(y);
 				y = 0;
 				checkBreak(y);
-
+				throwNetworkData();
 				nextBlock();
 				holdChecker = -1;
 				setHoldLabel();
-				
-				throwNetworkData();
+		
 
 			} else {
 				currentBlock.sety(currentBlock.getPt().y + IntClass.BLOCKSIZE);
@@ -1773,11 +1784,11 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i].setImg();
 				y = i;
 				checkBreak(y);
-
+				throwNetworkData();
 				nextBlock();
 				holdChecker = -1;
 				setHoldLabel();
-				throwNetworkData();
+		
 
 			} else if (i == 0) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][0].setState(true);
@@ -1799,7 +1810,7 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				holdChecker = -1;
 				setHoldLabel();
 				
-				throwNetworkData();
+		
 
 			} else {
 				currentBlock.sety(currentBlock.getPt().y + IntClass.BLOCKSIZE);
@@ -5264,11 +5275,13 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 			while (playChecker) // 게임 진행중일 때
 			{
 				try {
-					Thread.sleep(30);
+					Thread.sleep(00);
 				} catch (InterruptedException e) {
 				}
-				if (!overChecker) // 게임이 끝난 경우
+	
+				if (!overChecker) // 게임오버 당한경우 
 				{
+					
 					try
 					{					
 						gameoverClip = AudioSystem.getClip();
@@ -5303,35 +5316,41 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				
 					gameoverAniThread.interrupt();
 					
+					
+					
+					
 				}
 
 			}
 		}
 	}
 	
+
 	public void setNetworkChecker(boolean in)
 	{
 		networkChecker = in;
+	
 	}
 
-	public boolean getDownChecker()
+	public boolean getMessageChecker() //서버로 내 블록 상태를 전송할 때 사용하는 함수로, downChcker가 true일 경우 서버로 메세지 전송 
 	{
-		return downChecker;
+		return messageChecker;
 	}
-	public void setDownChecker(boolean in)
+	public void setMessageChecker(boolean in) // 서버로 데이터를 전송하고 나서 downChecker를 false로 변환할 때 사용 
 	{
-		downChecker = in;
+		messageChecker = in;
 	}
 	public String readBlock() // 블록의 현재 상태를 읽어들이는 메소드 
 	{
-		String readString = "";
-		for(int i=0;i<10;i++)
+		String readString = "b "+finalCrush + " ";
+		
+		for (int i = 0; i < 20; i++) // 게임오버 애니메이션
 		{
-			for(int j=0;j<20;j++)
-			{
-				readString = readString + blockSpace[i][j].getType()+" ";
+			for (int j = 0; j < 10; j++) {
+				readString = readString + blockSpace[j][i].getType()+" ";
 			}
 		}
+		
 		return readString;
 		
 	}
@@ -5344,15 +5363,48 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 	{
 		finalCrush = in;
 	}
-	public void throwNetworkData()
+	public void throwNetworkData() // 서버로 전송할 데이터 모으기 
 	{
 		if(networkChecker)
 		{
-			downChecker = true;
+			messageChecker = true;
 			finalCrush = crush;
 			readBlock();
 		}
 	}
+	
+	public void crush(int in) // 상대방이 블록을 부쉈을 때 처리 
+	{
+		int rand;
+		rand = (int)Math.random()*10;
+	}
+	
+	public int getMessageType()
+	{
+		return messageType;
+	}
+	
+	public void setMessageType(int in)
+	{
+		messageType=  in;
+	}
+	
+	public void win()
+	{
+		System.out.println("Win!!");
+
+		initGame();
+	}
+	
+	
+	public boolean getEndChecker() {
+		return endChecker;
+	}
+	public void setEndChecker(boolean in)
+	{
+		endChecker = in;
+	}
+	
 
 }
 

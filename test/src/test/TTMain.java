@@ -20,68 +20,12 @@ public class TTMain
 		frame.setPreferredSize(new Dimension(1000,600));
 		frame.pack();
 		frame.getContentPane();
-		frame.setVisible(true);
+		frame.setVisible(true);	
 		frame.setLayout(null);
 		frame.add(test);
 		
 		test.setBounds(50,50,1000,600);
 		
-		
-		frame.addWindowListener(new WindowListener() {
-
-			@Override
-			public void windowOpened(WindowEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void windowClosing(WindowEvent e) {
-				// TODO Auto-generated method stub
-				try {
-					test.getCommunication().getSocket().close();
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}catch(NullPointerException e2) {}
-				
-				System.exit(0);
-			}
-
-			@Override
-			public void windowClosed(WindowEvent e) {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public void windowIconified(WindowEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void windowDeiconified(WindowEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void windowActivated(WindowEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void windowDeactivated(WindowEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-		});
-
-	
-
 
 	}
-}
+}	

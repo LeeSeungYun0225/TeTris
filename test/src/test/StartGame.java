@@ -23,6 +23,7 @@ public class StartGame extends JPanel{
 	private Communication communication;
 	private GamePlay gamePlay;
 	private LoginFrame loginFrame;
+	private OpponentPanel oppPanel;
 	
 
 	public StartGame() // 게임 시작 화면 구성 
@@ -56,7 +57,12 @@ public class StartGame extends JPanel{
 		loginLabel = new JLabel();
 		loginLabel.setBounds(100,100,500,500);
 		add(loginLabel);
-
+		
+		oppPanel = new OpponentPanel();
+		oppPanel.setBounds(600,0,600,500);
+		add(oppPanel);
+		
+		oppPanel.setVisible(false);
 		
 		
 		
@@ -81,6 +87,10 @@ public class StartGame extends JPanel{
 				gamePlay.setVisible(false);
 				gamePlay.initGame();
 				gamePlay.setNetworkChecker(false);
+				try {
+					communication.endCommunication();
+				}catch(NullPointerException e1) {}
+				
 			}
 		});
 		
@@ -163,13 +173,10 @@ public class StartGame extends JPanel{
 				{
 					Communication communication = new Communication();
 					
-					gamePlay.setNetworkChecker(true);
+					
 					setVisible(false);
-					singleGameBtn.setVisible(false);
-					multiGameBtn.setVisible(false);
-					exitBtn.setVisible(true);
-					gamePlay.setVisible(true);
-					loginFrame.setVisible(false);
+					
+					
 				}
 			});
 			
@@ -242,6 +249,24 @@ public class StartGame extends JPanel{
 		{
 			socket = in;
 		}
+		public void finalize() throws Throwable
+		{
+			socket.close();
+			outputStream.close();
+			dataOutputStream.close();
+		}
+		public void endSend()
+		{
+			
+			try {
+				dataOutputStream.close();
+				outputStream.close();
+				socket.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		
 		public void run()
 		{
@@ -259,10 +284,34 @@ public class StartGame extends JPanel{
 			
 			while(true)
 			{
-				if(gamePlay.getDownChecker())  
+				if(gamePlay.getEndChecker()) // 게임오버시 
 				{
-					System.out.println(gamePlay.getCrush() + "개 부숴짐");
-					outputString = gamePlay.readBlock();
+					outputString = "g";
+					System.out.println("메세지 전송 : " + outputString);
+					try {
+						dataOutputStream.writeUTF(outputString);
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						System.out.println("발신중 문제발생");
+						e.printStackTrace();
+					}
+					
+					gamePlay.setEndChecker(false);
+				}
+				
+				if(gamePlay.getMessageChecker())  
+				{
+					if(gamePlay.getMessageType() == 2)// 게임 시작 버튼 눌렀을 때 
+					{
+						outputString = "s";
+						System.out.println("메세지 전송 : " + outputString);
+						gamePlay.setMessageType(0);
+					}
+					
+					else if(gamePlay.getMessageType() == 0)
+					{
+						outputString = gamePlay.readBlock();
+					}
 					
 					try {
 						dataOutputStream.writeUTF(outputString);
@@ -272,7 +321,7 @@ public class StartGame extends JPanel{
 						e.printStackTrace();
 					}
 					gamePlay.setCrush(0);
-					gamePlay.setDownChecker(false);
+					gamePlay.setMessageChecker(false);
 				}
 				
 				try {
@@ -292,11 +341,34 @@ public class StartGame extends JPanel{
 		
 		private DataInputStream dataInputStream;
 		private String inputString;
+		private String[] tokenizing;
 		
 		public ReceiveThread(Socket in)
 		{
 			socket = in;
+
 		}
+		
+		public void finalize() throws Throwable
+		{
+			socket.close();
+			inputStream.close();
+			dataInputStream.close();
+		}
+		
+		public void endReceive()
+		{
+			
+			try {
+				dataInputStream.close();
+				inputStream.close();
+				socket.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
 		
 		public void run()
 		{
@@ -319,6 +391,24 @@ public class StartGame extends JPanel{
 					e.printStackTrace();
 				}
 				System.out.println("서버에서 전송된 문자 : " + inputString );
+				tokenizing = inputString.split(" ");
+				
+				if(tokenizing[0].equals("b")) // 상대방 블록 받을시 
+				{
+					inputString = inputString.substring(4,inputString.length());
+					gamePlay.crush(Integer.parseInt(tokenizing[1]));
+					oppPanel.setBlocks(inputString);
+					System.out.println("상대 블록 읽기 : " + inputString );
+				}
+				else if(tokenizing[0].equals("w")) // 상대방 게임오버시 
+				{
+					gamePlay.win();
+				}
+				else if(tokenizing[0].equals("s")) // 시작 문자 발생시
+				{
+					gamePlay.startButton();
+					oppPanel.initBlocks();
+				}
 			}
 		}
 	}
@@ -334,14 +424,25 @@ public class StartGame extends JPanel{
 			
 			try {
 				 socket = new Socket("192.168.0.33" , 8877) ;
-			     System.out.println("서버와 접속이 되었습니다.");
-			         
-			   
 			     
-			     sender = new SendThread(socket);
-			     sender.start();
-			     receiver = new ReceiveThread(socket);
-			     receiver.start();
+				 
+				 if(socket.isConnected())
+				 {
+					 System.out.println("서버와 접속이 되었습니다.");
+					 gamePlay.initGame();
+					 gamePlay.setNetworkChecker(true);
+					 oppPanel.setVisible(true);
+					 singleGameBtn.setVisible(false);
+					 multiGameBtn.setVisible(false);
+					 exitBtn.setVisible(true);
+					 gamePlay.setVisible(true);
+					 loginFrame.setVisible(false);
+				     sender = new SendThread(socket);
+				     sender.start();
+				     receiver = new ReceiveThread(socket);
+				     receiver.start();
+				 }
+				
 			     
 			  
 			}
@@ -356,7 +457,26 @@ public class StartGame extends JPanel{
 			return socket;
 		}
 		
+		public void endCommunication()
+		{
+			try {
+				socket.close();
+				receiver.endReceive();
+				sender.endSend();
+				
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			sender.interrupt();
+			receiver.interrupt();
+		}
 		
+		public void finalize() throws Throwable
+		{	
+			sender.interrupt();
+			receiver.interrupt();
+		}
 	}
 	
 	public Communication getCommunication()
