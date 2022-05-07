@@ -117,7 +117,7 @@ public class Block extends JLabel // 블록을 관리하는 클래스
 			{
 				for(int i =0;i<4;i++)
 				{
-					lbl[i].setType(3);
+					lbl[i].setType(1);
 					lbl[i].setImg();
 				}
 				break;
@@ -127,7 +127,7 @@ public class Block extends JLabel // 블록을 관리하는 클래스
 			{
 				for(int i =0;i<4;i++)
 				{
-					lbl[i].setType(5);
+					lbl[i].setType(2);
 					lbl[i].setImg();
 				}
 				break;
@@ -137,7 +137,7 @@ public class Block extends JLabel // 블록을 관리하는 클래스
 			{
 				for(int i =0;i<4;i++)
 				{
-					lbl[i].setType(7);
+					lbl[i].setType(3);
 					lbl[i].setImg();
 				}
 				break;
@@ -149,7 +149,7 @@ public class Block extends JLabel // 블록을 관리하는 클래스
 			{
 				for(int i =0;i<4;i++)
 				{
-					lbl[i].setType(9);
+					lbl[i].setType(4);
 					lbl[i].setImg();
 				}
 				break;
@@ -161,7 +161,7 @@ public class Block extends JLabel // 블록을 관리하는 클래스
 			{
 				for(int i =0;i<4;i++)
 				{
-					lbl[i].setType(11);
+					lbl[i].setType(5);
 					lbl[i].setImg();
 				}
 				break;
@@ -173,7 +173,7 @@ public class Block extends JLabel // 블록을 관리하는 클래스
 			{
 				for(int i =0;i<4;i++)
 				{
-					lbl[i].setType(13);
+					lbl[i].setType(6);
 					lbl[i].setImg();
 				}
 				break;

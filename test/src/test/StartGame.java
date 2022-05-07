@@ -308,7 +308,7 @@ public class StartGame extends JPanel{
 						gamePlay.setMessageType(0);
 					}
 					
-					else if(gamePlay.getMessageType() == 0)
+					else if(gamePlay.getMessageType() == 0) // 블록 상태를 받아 전송할 때 
 					{
 						outputString = gamePlay.readBlock();
 					}

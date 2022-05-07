@@ -689,17 +689,17 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 			if (i > 0 && (blockSpace[(currentBlock.getPt().x / IntClass.BLOCKSIZE) + 1][i - 1].getState()
 					|| blockSpace[(currentBlock.getPt().x / IntClass.BLOCKSIZE) + 2][i - 1].getState())) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(3);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(1);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setType(3);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setType(1);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setImg();
 
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(3);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(1);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(3);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(1);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setImg();
 				y = i + 1;
 				checkBreak(y);
@@ -715,16 +715,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 			} else if (i == 0) {
 
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(3);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(1);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(3);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(1);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(3);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(1);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(3);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(1);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setImg();
 				y = 1;
 				checkBreak(y);
@@ -750,16 +750,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 					|| blockSpace[(currentBlock.getPt().x / IntClass.BLOCKSIZE) + 2][i - 1].getState()))
 					|| blockSpace[(currentBlock.getPt().x / IntClass.BLOCKSIZE) + 3][i].getState()) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(5);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(2);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setType(5);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setType(2);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].setType(5);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].setType(2);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(5);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(2);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setImg();
 				y = i + 1;
 				checkBreak(y);
@@ -773,16 +773,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 
 			} else if (i == 0) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(5);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(2);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][0].setType(5);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][0].setType(2);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][1].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(5);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(2);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(5);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(2);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setImg();
 				y = 1;
 				checkBreak(y);
@@ -810,16 +810,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 							|| blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i - 1].getState())
 					|| blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i].getState()) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(7);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(3);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setType(7);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setType(3);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(7);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(3);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setType(7);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setType(3);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setImg();
 				y = i + 1;
 				checkBreak(y);
@@ -833,16 +833,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 
 			} else if (i == 0) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(7);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(3);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setType(7);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setType(3);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(7);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(3);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(7);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(3);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setImg();
 				y = 1;
 				checkBreak(y);
@@ -868,16 +868,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 					|| blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i - 1].getState()
 					|| blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i - 1].getState())) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(9);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(4);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setType(9);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setType(4);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i].setType(9);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i].setType(4);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(9);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(4);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setImg();
 				y = i + 1;
 				checkBreak(y);
@@ -891,16 +891,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				
 			} else if (i == 0) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(9);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(4);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][0].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][0].setType(9);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][0].setType(4);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][0].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(9);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(4);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(9);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(4);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setImg();
 				y = 1;
 				checkBreak(y);
@@ -924,16 +924,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 					|| blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i - 1].getState()
 					|| blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i - 1].getState())) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(11);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(5);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setType(11);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setType(5);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i].setType(11);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i].setType(5);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(11);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(5);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setImg();
 				y = i + 1;
 				checkBreak(y);
@@ -946,16 +946,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 
 			} else if (i == 0) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(11);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(5);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][0].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][0].setType(11);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][0].setType(5);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][0].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(11);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(5);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(11);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(5);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setImg();
 				y = 1;
 				checkBreak(y);
@@ -981,16 +981,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 					|| blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i - 1].getState()
 					|| blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i - 1].getState())) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(13);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(6);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setType(13);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setType(6);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i].setType(13);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i].setType(6);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(13);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(6);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setImg();
 				y = i + 1;
 				checkBreak(y);
@@ -1005,16 +1005,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 
 			} else if (i == 0) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(13);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(6);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][0].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][0].setType(13);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][0].setType(6);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][0].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(13);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(6);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(13);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(6);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setImg();
 				y = 1;
 				checkBreak(y);
@@ -1102,17 +1102,17 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 			if ((i > 0 && blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i - 1].getState()
 					|| (i > 1 && blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i - 2].getState()))) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i - 1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i - 1].setType(5);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i - 1].setType(2);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i - 1].setImg();
 
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i].setType(5);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i].setType(2);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setType(5);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setType(2);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(5);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(2);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setImg();
 				y = i + 1;
 				checkBreak(y);
@@ -1128,16 +1128,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 
 			} else if (i == 1) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(5);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(2);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][0].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][0].setType(5);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][0].setType(2);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][0].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][1].setType(5);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][1].setType(2);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][1].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][2].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][2].setType(5);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][2].setType(2);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][2].setImg();
 				y = 2;
 				checkBreak(y);
@@ -1165,18 +1165,18 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 			if ((i > 0 && blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i - 1].getState()
 					|| (i > 1 && blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i - 2].getState()))) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i - 1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i - 1].setType(7);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i - 1].setType(3);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i - 1].setImg();
 
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(7);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(3);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i].setType(7);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i].setType(3);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i].setImg();
 
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(7);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(3);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setImg();
 				y = i + 1;
 				checkBreak(y);
@@ -1191,16 +1191,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 	
 			} else if (i == 1) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setType(7);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setType(3);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][0].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][0].setType(7);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][0].setType(3);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][0].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(7);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(3);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setType(7);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setType(3);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setImg();
 				y = 2;
 				checkBreak(y);
@@ -1227,18 +1227,18 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 					|| (i < 19 && blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].getState()))) {
 
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(9);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(4);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setImg();
 
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(9);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(4);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setImg();
 
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(9);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(4);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setType(9);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setType(4);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setImg();
 				y = i + 2;
 				checkBreak(y);
@@ -1253,16 +1253,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				
 			} else if (i == 0) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(9);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(4);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setType(9);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setType(4);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(9);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(4);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][2].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][2].setType(9);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][2].setType(4);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][2].setImg();
 				y = 2;
 				checkBreak(y);
@@ -1287,17 +1287,17 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 					|| (i > 0 && blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i - 1].getState())
 					|| (blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].getState()))) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i].setType(9);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i].setType(4);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i].setImg();
 
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(9);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(4);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(9);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(4);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].setType(9);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].setType(4);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].setImg();
 				y = i + 1;
 				checkBreak(y);
@@ -1311,16 +1311,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				
 			} else if (i == 0) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(9);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(4);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(9);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(4);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][1].setType(9);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][1].setType(4);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][1].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][0].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][0].setType(9);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][0].setType(4);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][0].setImg();
 				y = 1;
 				checkBreak(y);
@@ -1343,18 +1343,18 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 			if (i > 0 && (blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i - 1].getState())
 					|| i > 0 && (blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i - 1].getState())) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(9);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(4);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setType(9);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setType(4);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setImg();
 
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(9);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(4);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setImg();
 
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setType(9);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setType(4);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setImg();
 				y = i + 2;
 				checkBreak(y);
@@ -1369,16 +1369,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				
 			} else if (i == 0) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(9);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(4);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][2].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][2].setType(9);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][2].setType(4);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][2].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(9);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(4);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(9);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(4);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setImg();
 				y = 2;
 				checkBreak(y);
@@ -1403,18 +1403,18 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 			if ((i > 0 && blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i - 1].getState())
 					|| (i > 0 && blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i - 1].getState())) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(11);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(5);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setType(11);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setType(5);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setImg();
 
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(11);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(5);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setImg();
 
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(11);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(5);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setImg();
 				y = i + 2;
 				checkBreak(y);
@@ -1429,16 +1429,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				
 			} else if (i == 0) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(11);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(5);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setType(11);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setType(5);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(11);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(5);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(11);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(5);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setImg();
 				y = 2;
 				checkBreak(y);
@@ -1464,16 +1464,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 					|| blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].getState()
 					|| blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i].getState()) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(11);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(5);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(11);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(5);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(11);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(5);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].setType(11);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].setType(5);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].setImg();
 				y = i + 1;
 				checkBreak(y);
@@ -1489,16 +1489,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 
 			else if (i == 0) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(11);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(5);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(11);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(5);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(11);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(5);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][1].setType(11);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][1].setType(5);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][1].setImg();
 				y = 1;
 				checkBreak(y);
@@ -1522,16 +1522,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 			if ((i < 19 && blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].getState())
 					|| (i > 0 && blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i - 1].getState())) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setType(11);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setType(5);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(11);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(5);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setType(11);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setType(5);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(11);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(5);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setImg();
 				y = i + 2;
 				checkBreak(y);
@@ -1547,16 +1547,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				
 			} else if (i == 0) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setType(11);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setType(5);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(11);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(5);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][2].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][2].setType(11);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][2].setType(5);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][2].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(11);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(5);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setImg();
 				y = 2;
 				checkBreak(y);
@@ -1583,17 +1583,17 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 					|| (i > 0 && blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i - 1].getState())) {
 
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i - 1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i - 1].setType(13);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i - 1].setType(6);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i - 1].setImg();
 
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(13);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(6);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setType(13);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setType(6);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(13);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(6);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setImg();
 				y = i + 1;
 				checkBreak(y);
@@ -1610,16 +1610,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				
 			} else if (i == 1) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(13);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(6);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(13);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(6);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setType(13);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setType(6);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(13);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(6);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setImg();
 				y = 2;
 				checkBreak(y);
@@ -1646,17 +1646,17 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 					|| (i > 1 && blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i - 2].getState())) {
 
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i - 1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i - 1].setType(13);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i - 1].setType(6);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i - 1].setImg();
 
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i].setType(13);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i].setType(6);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(13);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(6);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setType(13);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setType(6);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].setImg();
 				y = i;
 				checkBreak(y);
@@ -1671,16 +1671,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				
 			} else if (i == 1) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setType(13);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setType(6);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(13);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(6);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(13);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(6);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(13);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(6);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setImg();
 				y = 1;
 				checkBreak(y);
@@ -1705,18 +1705,18 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 			if ((i > 0 && blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i - 1].getState())
 					|| i > 1 && blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i - 2].getState()) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i - 1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i - 1].setType(13);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i - 1].setType(6);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i - 1].setImg();
 
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i].setType(13);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i].setType(6);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(13);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(6);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setImg();
 
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(13);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(6);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setImg();
 				y = i + 1;
 				checkBreak(y);
@@ -1734,16 +1734,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 	
 			} else if (i == 1) {
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setType(13);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setType(6);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(13);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(6);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(13);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(6);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setImg();
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setState(true);
-				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setType(13);
+				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setType(6);
 				blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setImg();
 				y = 2;
 				checkBreak(y);
@@ -2939,17 +2939,17 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				if (blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].getState()
 						|| blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].getState()) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(3);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(1);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(3);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(1);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setImg();
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(3);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(1);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setType(3);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setType(1);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setImg();
 					y = i + 2;
 					checkBreak(y);
@@ -2959,16 +2959,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 					i = -1;
 				} else if (i == 0) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(3);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(1);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(3);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(1);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(3);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(1);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(3);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(1);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setImg();
 					y = 1;
 					checkBreak(y);
@@ -2988,17 +2988,17 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 						|| (blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].getState())) {
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(5);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(2);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(5);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(2);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setImg();
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 2].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 2].setType(5);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 2].setType(2);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 2].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setType(5);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setType(2);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setImg();
 
 					y = i + 2;
@@ -3009,16 +3009,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 					i = -1;
 				} else if (i == 0) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(5);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(2);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][1].setType(5);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][1].setType(2);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(5);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(2);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(5);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(2);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setImg();
 					y = 1;
 					checkBreak(y);
@@ -3039,17 +3039,17 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 								&& blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].getState())) {
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(7);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(3);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(7);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(3);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setImg();
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(7);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(3);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 2].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 2].setType(7);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 2].setType(3);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 2].setImg();
 					y = i + 2;
 					checkBreak(y);
@@ -3059,16 +3059,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 					i = -1;
 				} else if (i == 0) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(7);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(3);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setType(7);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setType(3);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(7);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(3);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(7);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(3);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setImg();
 					y = 1;
 					checkBreak(y);
@@ -3087,17 +3087,17 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 						|| blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i].getState()) {
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(9);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(4);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(9);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(4);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].setType(9);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].setType(4);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].setImg();
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(9);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(4);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setImg();
 					y = i + 2;
 					checkBreak(y);
@@ -3107,16 +3107,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 					i = -1;
 				} else if (i == 0) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(9);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(4);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][0].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][0].setType(9);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][0].setType(4);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][0].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(9);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(4);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(9);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(4);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setImg();
 					y = 1;
 					checkBreak(y);
@@ -3134,17 +3134,17 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 						|| blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i].getState()) {
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(11);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(5);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(11);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(5);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setType(11);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setType(5);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setImg();
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setType(11);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setType(5);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setImg();
 					y = i + 2;
 					checkBreak(y);
@@ -3154,16 +3154,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 					i = -1;
 				} else if (i == 0) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(11);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(5);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][0].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][0].setType(11);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][0].setType(5);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][0].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(11);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(5);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(11);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(5);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setImg();
 					y = 1;
 					checkBreak(y);
@@ -3181,17 +3181,17 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 						|| blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i].getState()) {
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(13);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(6);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(13);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(6);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setType(13);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setType(6);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setImg();
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(13);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(6);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setImg();
 					y = i + 2;
 					checkBreak(y);
@@ -3201,16 +3201,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 					i = -1;
 				} else if (i == 0) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(13);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(6);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][0].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][0].setType(13);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][0].setType(6);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][0].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(13);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(6);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(13);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(6);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setImg();
 					y = 1;
 					checkBreak(y);
@@ -3284,18 +3284,18 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 						|| (i > 0 && blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i - 1].getState())
 						|| i == 0) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i].setType(5);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i].setType(2);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i].setImg();
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].setType(5);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].setType(2);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(5);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(2);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setImg();
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setType(5);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setType(2);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setImg();
 					y = i + 2;
 					checkBreak(y);
@@ -3315,18 +3315,18 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 						|| (i > 0 && blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i - 1].getState())
 						|| i == 0) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i].setType(7);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i].setType(3);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i].setImg();
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(7);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(3);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setType(7);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setType(3);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setImg();
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(7);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(3);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setImg();
 					y = i + 2;
 					checkBreak(y);
@@ -3345,18 +3345,18 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				if (blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].getState()
 						|| (blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].getState())) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(9);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(4);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setImg();
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(9);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(4);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setImg();
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 3].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 3].setType(9);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 3].setType(4);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 3].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 3].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 3].setType(9);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 3].setType(4);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 3].setImg();
 					y = i + 3;
 					checkBreak(y);
@@ -3368,16 +3368,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 					i = -1;
 				} else if (i == 0) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(9);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(4);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setType(9);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setType(4);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(9);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(4);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][2].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][2].setType(9);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][2].setType(4);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][2].setImg();
 					y = 2;
 					checkBreak(y);
@@ -3397,17 +3397,17 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 						|| (blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].getState())) {
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].setType(9);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].setType(4);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].setImg();
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(9);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(4);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setType(9);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setType(4);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 2].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 2].setType(9);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 2].setType(4);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 2].setImg();
 					y = i + 2;
 					checkBreak(y);
@@ -3417,16 +3417,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 					i = -1;
 				} else if (i == 0) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(9);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(4);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(9);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(4);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][1].setType(9);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][1].setType(4);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][0].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][0].setType(9);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][0].setType(4);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][0].setImg();
 					y = 1;
 					checkBreak(y);
@@ -3443,16 +3443,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				if (blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].getState()
 						|| blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].getState()) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(9);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(4);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(9);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(4);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setType(9);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setType(4);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 3].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 3].setType(9);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 3].setType(4);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 3].setImg();
 					y = i + 3;
 					checkBreak(y);
@@ -3464,16 +3464,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 					i = -1;
 				} else if (i == 0) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(9);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(4);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][2].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][2].setType(9);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][2].setType(4);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][2].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(9);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(4);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(9);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(4);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setImg();
 					y = 2;
 					checkBreak(y);
@@ -3494,16 +3494,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 						|| blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].getState()) {
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(11);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(5);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(11);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(5);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(11);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(5);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 3].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 3].setType(11);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 3].setType(5);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 3].setImg();
 					y = i + 3;
 					checkBreak(y);
@@ -3515,16 +3515,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 					i = -1;
 				} else if (i == 0) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(11);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(5);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setType(11);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setType(5);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(11);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(5);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(11);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(5);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setImg();
 					y = 2;
 					checkBreak(y);
@@ -3546,16 +3546,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 						|| (blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].getState())) {
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(11);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(5);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(11);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(5);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setType(11);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setType(5);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 2].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 2].setType(11);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 2].setType(5);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 2].setImg();
 					y = i + 2;
 					checkBreak(y);
@@ -3565,16 +3565,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 					i = -1;
 				} else if (i == 0) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(11);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(5);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(11);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(5);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(11);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(5);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][1].setType(11);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][1].setType(5);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][1].setImg();
 					y = 1;
 					checkBreak(y);
@@ -3593,17 +3593,17 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 						|| blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].getState()) {
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(11);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(5);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setType(11);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setType(5);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setImg();
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 3].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 3].setType(11);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 3].setType(5);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 3].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 3].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 3].setType(11);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 3].setType(5);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 3].setImg();
 					y = i + 3;
 					checkBreak(y);
@@ -3615,16 +3615,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 					i = -1;
 				} else if (i == 0) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setType(11);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setType(5);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(11);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(5);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][2].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][2].setType(11);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][2].setType(5);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][2].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(11);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(5);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setImg();
 					y = 2;
 					checkBreak(y);
@@ -3644,16 +3644,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				if ((i > 0 && blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i - 1].getState())
 						|| (blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].getState())) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(13);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(6);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(13);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(6);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(13);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(6);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(13);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(6);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setImg();
 					y = i + 2;
 					checkBreak(y);
@@ -3665,16 +3665,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 					i = -1;
 				} else if (i == 0) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(13);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(6);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(13);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(6);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setType(13);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setType(6);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(13);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(6);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setImg();
 					y = 2;
 					checkBreak(y);
@@ -3695,16 +3695,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 						|| (blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].getState())
 						|| (i > 0 && blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i - 1].getState())) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(13);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(6);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setType(13);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setType(6);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(13);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(6);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(13);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(6);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setImg();
 					y = i + 1;
 					checkBreak(y);
@@ -3714,16 +3714,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 					i = -1;
 				} else if (i == 0) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setType(13);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setType(6);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(13);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(6);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(13);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(6);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(13);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(6);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setImg();
 					y = 1;
 					checkBreak(y);
@@ -3741,16 +3741,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				if ((blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i].getState())
 						|| (i > 0 && blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i - 1].getState())) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(13);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(6);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setType(13);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setType(6);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(13);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(6);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(13);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(6);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setImg();
 					y = i + 2;
 					checkBreak(y);
@@ -3762,16 +3762,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 					i = -1;
 				} else if (i == 0) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setType(13);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setType(6);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(13);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(6);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(13);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(6);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setState(true);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setType(13);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setType(6);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setImg();
 					y = 2;
 					checkBreak(y);
@@ -3833,7 +3833,7 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 		}
 		throwNetworkData();
 	}
-
+	
 	public void initLabel() {
 		switch (currentBlock.getState()) {
 		case 0: {
@@ -4560,31 +4560,31 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 						|| blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].getState()) {
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(4);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(8);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(4);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(8);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(4);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(8);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setType(4);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setType(8);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setImg();
 
 					i = -1;
 				} else if (i == 0) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(4);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(8);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(4);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(8);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(4);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(8);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(4);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(8);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setImg();
 				}
 
@@ -4599,32 +4599,32 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 						|| (blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].getState())) {
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(6);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(9);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(6);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(9);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setImg();
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 2].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 2].setType(6);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 2].setType(9);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 2].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setType(6);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setType(9);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setImg();
 
 					i = -1;
 				} else if (i == 0) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(6);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(9);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][1].setType(6);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][1].setType(9);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(6);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(9);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(6);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(9);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setImg();
 				}
 
@@ -4640,32 +4640,32 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 								&& blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].getState())) {
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(8);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(10);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(8);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(10);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setImg();
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(8);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(10);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 2].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 2].setType(8);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 2].setType(10);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 2].setImg();
 
 					i = -1;
 				} else if (i == 0) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(8);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(10);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setType(8);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setType(10);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(8);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(10);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(8);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(10);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setImg();
 				}
 
@@ -4679,32 +4679,32 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 						|| blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i].getState()) {
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(10);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(11);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(10);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(11);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].setType(10);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].setType(11);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].setImg();
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(10);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(11);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setImg();
 
 					i = -1;
 				} else if (i == 0) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(10);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(11);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][0].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][0].setType(10);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][0].setType(11);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][0].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(10);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(11);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(10);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(11);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setImg();
 				}
 			}
@@ -4755,32 +4755,32 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 						|| blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i].getState()) {
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(14);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(13);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(14);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(13);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setType(14);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setType(13);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setImg();
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(14);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(13);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setImg();
 
 					i = -1;
 				} else if (i == 0) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(14);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(13);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][0].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][0].setType(14);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][0].setType(13);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][0].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(14);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(13);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(14);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(13);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setImg();
 				}
 			}
@@ -4790,34 +4790,34 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 			for (int i = 17 - (currentBlock.getPt().y / IntClass.BLOCKSIZE); i >= 0; i--) {
 				if (i > 0 && blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i - 1].getState()) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(2);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(8);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setImg();
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(2);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(8);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setImg();
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(2);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(8);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setImg();
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 3].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 3].setType(2);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 3].setType(8);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 3].setImg();
 
 					i = -1;
 				} else if (i == 0) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(2);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(8);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setType(2);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setType(8);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(2);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(8);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][3].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][3].setType(2);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][3].setType(8);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][3].setImg();
 				}
 			}
@@ -4829,18 +4829,18 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 						|| (i > 0 && blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i - 1].getState())
 						|| i == 0) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i].setType(6);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i].setType(9);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i].setImg();
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].setType(6);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].setType(9);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(6);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(9);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setImg();
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setType(6);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setType(9);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setImg();
 
 					i = -1;
@@ -4854,17 +4854,17 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 						|| (i > 0 && blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i - 1].getState())
 						|| i == 0) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i].setType(8);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i].setType(10);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(8);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(10);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setType(8);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setType(10);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setImg();
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(8);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(10);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setImg();
 
 					i = -1;
@@ -4878,32 +4878,32 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 						|| (blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].getState())) {
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(10);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(11);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(10);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(11);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setImg();
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 3].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 3].setType(10);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 3].setType(11);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 3].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 3].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 3].setType(10);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 3].setType(11);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 3].setImg();
 
 					i = -1;
 				} else if (i == 0) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(10);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(11);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setType(10);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setType(11);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(10);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(11);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][2].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][2].setType(10);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][2].setType(11);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][2].setImg();
 				}
 			}
@@ -4916,32 +4916,32 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 						|| (blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].getState())) {
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].setType(10);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].setType(11);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].setImg();
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(10);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(11);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setType(10);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setType(11);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 2].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 2].setType(10);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 2].setType(11);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 2].setImg();
 
 					i = -1;
 				} else if (i == 0) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(10);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(11);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(10);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(11);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][1].setType(10);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][1].setType(11);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][0].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][0].setType(10);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][0].setType(11);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][0].setImg();
 				}
 			}
@@ -4954,33 +4954,33 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 						|| blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].getState()) {
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(10);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(11);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(10);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(11);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setImg();
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setType(10);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setType(11);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 2].setImg();
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 3].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 3].setType(10);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 3].setType(11);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 3].setImg();
 
 					i = -1;
 				} else if (i == 0) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(10);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(11);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][2].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][2].setType(10);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][2].setType(11);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][2].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(10);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(11);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(10);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(11);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setImg();
 				}
 
@@ -5112,32 +5112,32 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				if ((i > 0 && blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i - 1].getState())
 						|| blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].getState()) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(14);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(13);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(14);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(13);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(14);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(13);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setImg();
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(14);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(13);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setImg();
 
 					i = -1;
 				} else if (i == 0) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(14);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(13);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(14);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(13);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setType(14);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setType(13);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(14);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(13);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setImg();
 				}
 
@@ -5151,31 +5151,31 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 						|| (blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i].getState())
 						|| (i > 0 && blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i - 1].getState())) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(14);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(13);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setType(14);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setType(13);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(14);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(13);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(14);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(13);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setImg();
 
 					i = -1;
 				} else if (i == 1) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setType(14);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setType(13);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(14);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(13);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(14);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(13);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(14);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setType(13);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][1].setImg();
 				}
 
@@ -5188,31 +5188,31 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				if ((blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i].getState())
 						|| (i > 0 && blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i - 1].getState())) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(14);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setType(13);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setType(14);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setType(13);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(14);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(13);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(14);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setType(13);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 2].setImg();
 
 					i = -1;
 				} else if (i == 1) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setType(14);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setType(13);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(14);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(13);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(14);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setType(13);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setType(14);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setType(13);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][2].setImg();
 				}
 
@@ -5228,31 +5228,31 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 						|| blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i].getState()) {
 
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setType(2);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setType(8);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(2);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setType(8);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(2);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setType(8);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][i + 1].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].setType(2);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].setType(8);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][i + 1].setImg();
 
 					i = -1;
 				} else if (i == 0) {
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][0].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][0].setType(2);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][0].setType(8);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE][0].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(2);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setType(8);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 1][0].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(2);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setType(8);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 2][0].setImg();
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][0].setState(false);
-					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][0].setType(2);
+					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][0].setType(8);
 					blockSpace[currentBlock.getPt().x / IntClass.BLOCKSIZE + 3][0].setImg();
 				}
 
@@ -5375,8 +5375,62 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 	
 	public void crush(int in) // 상대방이 블록을 부쉈을 때 처리 
 	{
-		int rand;
-		rand = (int)Math.random()*10;
+		switch(in)
+		{
+			case 0:
+				break;
+			case 1:
+				
+			case 2:
+			case 3:
+			case 4:
+			{
+				
+				
+				int rand;
+				rand = (int)(Math.random()*10);
+				System.out.println("rand: " + rand);
+				
+				
+				for(int i=20;i>in-1;i--) // 기존 블록을 위로 올려주기 
+				{
+					for (int j = 0; j < 10; j++) {
+
+							blockSpace[j][i].setType(blockSpace[j][i-in].getType());
+							blockSpace[j][i].setState(blockSpace[j][i-in].getState());
+							blockSpace[j][i].setImg();
+						
+						
+					}
+				}
+				for(int i=0;i<in;i++) // 하단의 블록 상태 처리 
+				{
+					for (int j = 0; j < 10; j++) {
+
+						blockSpace[j][i].setState(false);
+		
+					}
+				}
+				for (int i = 0; i < in; i++)  // 새로 추가된 방해 블록 생성 
+				{
+					for (int j = 0; j < 10; j++) {
+						if(j != rand)
+						{
+							blockSpace[j][i].setType(15);
+							blockSpace[j][i].setImg();
+							blockSpace[j][i].setState(true);
+						}
+						
+					}
+				}
+				
+				initSpace();
+				shadow();
+				
+				throwNetworkData();
+				break;
+			}	
+		}
 	}
 	
 	public int getMessageType()
@@ -5406,5 +5460,16 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 	}
 	
 
+	public void initSpace()// state가 0인 블록 모두 이미지 초기화 
+	{
+		for (int i = 0; i < 20; i++) 
+		{
+			for (int j = 0; j < 10; j++) {
+				if(!blockSpace[j][i].getState())
+				blockSpace[j][i].setType(0);
+				blockSpace[j][i].setImg();
+			}
+		}
+	}
 }
 
