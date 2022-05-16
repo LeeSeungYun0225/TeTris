@@ -430,10 +430,11 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 		for (int i = 0; i < 10; i++) {
 			if (blockSpace[i][20].getState() || blockSpace[i][19].getState()) {
 				overChecker = false;
+				endChecker = true;
 				System.out.println("GameOver");
 				gameoverAniThread = new Thread(gameoverThread);
 				gameoverAniThread.start();			
-				endChecker = true;
+				
 				break;
 			}
 		}
@@ -5470,6 +5471,11 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				blockSpace[j][i].setImg();
 			}
 		}
+	}
+	
+	public boolean getNetworkChecker()
+	{
+		return networkChecker;
 	}
 }
 

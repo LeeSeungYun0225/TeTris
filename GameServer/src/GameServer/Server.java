@@ -19,11 +19,22 @@ public class Server {
 	private SendThread sender[];
 	private int isGaming = 0; // 게임 진행중인지 여부 확인 
 	private int readyPlayers = 0;
+	private DBConnection db;
+	private String userId[];
+	private int playerLimit=2;
+	private int win[];
+	private int lose[];
 	public Server()
 	{
-		socket = new Socket[2];
-		sender = new SendThread[2];
-		receiver = new ReceiveThread[2];
+		db = new DBConnection();
+		socket = new Socket[playerLimit];
+		sender = new SendThread[playerLimit];
+		receiver = new ReceiveThread[playerLimit];
+		userId = new String[playerLimit];
+		win = new int[playerLimit];
+		lose = new int[playerLimit];
+		win[0]=win[1]=0;
+		lose[0]=lose[1]=0;
 		try {
 			
 			serverSocket = new ServerSocket(portNumber); // 포트 넘버 설정 
@@ -64,6 +75,7 @@ public class ReceiveThread extends Thread {
 	private String receiveString;
 	private DataInputStream dataInputStream;
 	private int receiveClientNum;
+	private String[] tokens;
 	
 
 	public ReceiveThread()
@@ -81,6 +93,9 @@ public class ReceiveThread extends Thread {
 	{
 		while(true)
 		{
+		
+			
+			
 			if(!socket.isConnected())
 			{
 				break;
@@ -101,19 +116,74 @@ public class ReceiveThread extends Thread {
 				System.out.println("IOEX");
 				e.printStackTrace();
 			}
+			
 			System.out.println(receiveString);
-			if(receiveString.equals("g"))// 게임오버 메세지 받을 시에 
+			tokens = receiveString.split(" ");
+			
+			
+			if (tokens[0].equals("login")) // 로그인 시도시 
 			{
-				if(receiveClientNum == 0)
+				if(db.loginCheck(tokens[1],tokens[2]))//로그인 성공시 
 				{
-					sender[1].sendMessage("w");
+					if(receiveClientNum == 0)
+					{
+						win[0] = db.getWin(tokens[1]);
+						lose[0] = db.getLose(tokens[1]);
+						sender[0].sendMessage("loginSuccess " + win[0]+" " +lose[0]);
+						userId[0]=tokens[1];
+					}
+					else 
+					{
+						win[1] = db.getWin(tokens[1]);
+						lose[1] = db.getLose(tokens[1]);
+						sender[1].sendMessage("loginSuccess " + win[1]+" " +lose[1]);
+						userId[1]=tokens[1];
+					}
 				}
-				else if(receiveClientNum == 1)
+				else // 로그인 실패시 
 				{
-					sender[0].sendMessage("w");		
+					if(receiveClientNum == 0) 
+					{
+						sender[0].sendMessage("loginFailed");
+					}
+					else 
+					{
+						sender[1].sendMessage("loginFailed");
+					}
 				}
 			}
-			else if(receiveString.equals("s")) // 시작 메세지 받을시에 
+			
+			else if(tokens[0].equals("sign")) // 회원가입 시도시 
+			{
+				if(db.signNewUser(tokens[1], tokens[2]) == 1) // 회원가입 성공시 
+				{
+					if(receiveClientNum == 0)
+					{
+						sender[0].sendMessage("SignSuccess");
+						userId[0]=tokens[1];
+						win[0] = lose[0] =0;
+					}
+					else 
+					{
+						sender[1].sendMessage("SignSuccess");
+						userId[1] = tokens[1];
+						win[1] = lose[1] = 0;
+					}
+				}
+				else // 회원가입 실패시 
+				{
+					if(receiveClientNum == 0)
+					{
+						sender[0].sendMessage("SignFailed");
+					}
+					else 
+					{
+						sender[1].sendMessage("SignFailed");
+					}
+				}
+			}
+			
+			if(receiveString.equals("s")) // 시작 메세지 받을시에 
 			{
 				readyPlayers++;
 				if(readyPlayers == 2)
@@ -128,18 +198,39 @@ public class ReceiveThread extends Thread {
 					sender[0].sendMessage("s");	
 				}
 			}
-			else if(isGaming==2) // 블록 메세지 받을 시에 
+			
+			else if(receiveString.equals("g") || receiveString.equals("exit")) // 게임 오버 메세지 받을 시에 
 			{
-				if(receiveClientNum == 0)
+				if(receiveClientNum == 0) // 1번이 패배시 
 				{
-					sender[1].sendMessage(receiveString);
+					sender[1].sendMessage(receiveString); 
+					db.updateRecord(userId[1], 1); // win
+					db.updateRecord(userId[0], 2); // lose 
+					win[1] ++;
+					lose[0] ++;
 				}
-				else
+				else // 2번이 패배시 
 				{
-					sender[0].sendMessage(receiveString);		
+					sender[0].sendMessage(receiveString);	
+					db.updateRecord(userId[0], 1); // win
+					db.updateRecord(userId[1], 2); // lose 
+					win[0] ++;
+					lose[1]++;
+					
 				}
-				
-				
+			}
+			
+			else if(isGaming==2) // 게임중에 
+			{
+
+					if(receiveClientNum == 0)
+					{
+						sender[1].sendMessage(receiveString);
+					}
+					else
+					{
+						sender[0].sendMessage(receiveString);		
+					}
 			}
 			
 			
@@ -186,7 +277,7 @@ public class SendThread extends Thread {
 		
 		dataOutputStream = new DataOutputStream(outputStream);
 		
-		sendString = "하이 클라이언트";
+		sendString ="";
 		isGaming++;
 		sendOn= true;
 		sendClientNum = clientNumber;
@@ -201,17 +292,16 @@ public class SendThread extends Thread {
 				try
 				{
 					dataOutputStream.writeUTF(sendString);
-				}catch(Exception e) {}
+					System.out.println("데이터 전송 완료 : " + sendString);
+				}catch(Exception e) {
+					System.out.println("데이터 전송 실패 : " + sendString);
+				}
 				finally
 				{
 					sendOn =false;
 				}
 			}
 			
-			if(!socket.isConnected())
-			{
-				break;
-			}
 			
 			try {
 				Thread.sleep(0);

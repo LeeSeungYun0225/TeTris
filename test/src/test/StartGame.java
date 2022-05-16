@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
+import java.net.SocketException;
 import java.net.UnknownHostException;
 
 import javax.swing.JButton;
@@ -24,8 +25,21 @@ public class StartGame extends JPanel{
 	private GamePlay gamePlay;
 	private LoginFrame loginFrame;
 	private OpponentPanel oppPanel;
+	private String serverAddress = "192.168.0.33";
+	private int portNumber = 8877;
+	private boolean gameOverThrow = false;
+	private String myId = "";
+	private String myPass = "";
+	private String oppId = "";
+	private int myWin=0;
+	private int myLose =0;
+	private int oppWin = 0;
+	private int oppLose=0;
+	private boolean tryLogin = false;
+	private boolean trySign = false;
+	private boolean isLogin = false;
 	
-
+	
 	public StartGame() // 게임 시작 화면 구성 
 	{
 		// 각종 버튼과 텍스트필드,  레이블을 초기화하고 배열 , 세팅함 //
@@ -34,6 +48,9 @@ public class StartGame extends JPanel{
 		singleGameBtn = new JButton("Single Play");
 		multiGameBtn = new JButton("Multi Play");
 		exitBtn = new JButton("Exit");
+		tryLogin= false;
+		trySign = false;
+		isLogin = false;
 		
 		
 		singleGameBtn.setBounds(300,400,100,50);
@@ -74,22 +91,32 @@ public class StartGame extends JPanel{
 				exitBtn.setVisible(true);
 				gamePlay.setVisible(true);
 				loginFrame.setVisible(false);
+				
 			}
 		});
 		
 		
-		exitBtn.addActionListener(new ActionListener() { // 싱글 게임 도중 나가기 버튼 
+		exitBtn.addActionListener(new ActionListener() { // 게임 도중 나가기 버튼 
 			public void actionPerformed(ActionEvent e)
 			{
+				isLogin = false;
 				singleGameBtn.setVisible(true);
 				multiGameBtn.setVisible(true);
 				exitBtn.setVisible(false);
 				gamePlay.setVisible(false);
 				gamePlay.initGame();
-				gamePlay.setNetworkChecker(false);
-				try {
-					communication.endCommunication();
-				}catch(NullPointerException e1) {}
+				if(gamePlay.getNetworkChecker())
+				{
+					gameOverThrow= true;
+					gamePlay.setNetworkChecker(false);
+					try {
+						communication.endCommunication();
+					}catch(NullPointerException e1) {}
+				}
+				
+				
+				
+				
 				
 			}
 		});
@@ -97,6 +124,7 @@ public class StartGame extends JPanel{
 		multiGameBtn.addActionListener(new ActionListener() { // 멀티 게임 진입 버튼 
 			public void actionPerformed(ActionEvent e)
 			{
+				Communication communication = new Communication();
 				loginFrame.setVisible(true);
 			}
 		});
@@ -171,12 +199,14 @@ public class StartGame extends JPanel{
 			loginBtn.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e)
 				{
-					Communication communication = new Communication();
-					
-					
-					setVisible(false);
-					
-					
+					if(!userIdField.getText().equals("") && !userPasswordField.getText().equals(""))
+					{
+						
+						gameOverThrow= false;				
+						myId = userIdField.getText();
+						myPass = userPasswordField.getText();					
+						tryLogin = true;		
+					}				
 				}
 			});
 			
@@ -197,13 +227,25 @@ public class StartGame extends JPanel{
 					signIdField.setVisible(true);
 					signPasswordField.setVisible(true);
 					signPasswordConField.setVisible(true);
+				
+					
 				}
 			});
 			
 			signConBtn.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e)
 				{
-					
+					if(signPasswordField.getText().equals(signPasswordConField.getText()) && !signIdField.getText().equals("") && !signPasswordField.getText().equals(""))
+					{
+						myId = signIdField.getText();
+						myPass = signPasswordField.getText();
+						gameOverThrow= false;
+						trySign = true;
+					}
+					else
+					{
+						System.out.println("패스워드를 확인 해 주세요");
+					}
 				}
 			});
 			
@@ -284,51 +326,92 @@ public class StartGame extends JPanel{
 			
 			while(true)
 			{
-				if(gamePlay.getEndChecker()) // 게임오버시 
-				{
-					outputString = "g";
-					System.out.println("메세지 전송 : " + outputString);
-					try {
-						dataOutputStream.writeUTF(outputString);
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						System.out.println("발신중 문제발생");
-						e.printStackTrace();
-					}
-					
-					gamePlay.setEndChecker(false);
-				}
-				
-				if(gamePlay.getMessageChecker())  
-				{
-					if(gamePlay.getMessageType() == 2)// 게임 시작 버튼 눌렀을 때 
-					{
-						outputString = "s";
-						System.out.println("메세지 전송 : " + outputString);
-						gamePlay.setMessageType(0);
-					}
-					
-					else if(gamePlay.getMessageType() == 0) // 블록 상태를 받아 전송할 때 
-					{
-						outputString = gamePlay.readBlock();
-					}
-					
-					try {
-						dataOutputStream.writeUTF(outputString);
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						System.out.println("발신중 문제발생");
-						e.printStackTrace();
-					}
-					gamePlay.setCrush(0);
-					gamePlay.setMessageChecker(false);
-				}
-				
 				try {
 					Thread.sleep(0);
 				}
 				catch(Exception e)
 				{}
+				if(!isLogin) // 로그인 전에 
+				{
+					
+					if(tryLogin)// 로그인 시도 
+					{
+						
+						outputString = "login " + myId + " " + myPass;
+						System.out.println("로그인 시도" + " " + outputString);
+						try {
+							dataOutputStream.writeUTF(outputString);
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							System.out.println("송신중 문제발생");
+							e.printStackTrace();
+						}
+						tryLogin = false;
+					}
+					else if(trySign) // 회원 가입 시도 
+					{
+						System.out.println("가입 시도");
+						outputString = "sign " + myId + " " + myPass;
+						
+						try {
+							dataOutputStream.writeUTF(outputString);
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							System.out.println("송신중 문제발생");
+							e.printStackTrace();
+						}
+						trySign = false;
+					}
+					
+				}
+				else // 로그인 후에 
+				{
+					
+					if(gamePlay.getMessageChecker())  
+					{
+						if(gamePlay.getMessageType() == 2)// 게임 시작 버튼 눌렀을 때 
+						{
+							
+							outputString = "s";
+							System.out.println("메세지 전송 : " + outputString);
+							gamePlay.setMessageType(0);
+							
+						}
+						else if(gamePlay.getEndChecker() || gameOverThrow) // 게임오버시 
+						{
+							outputString = "g";
+							System.out.println("메세지 전송 : " + outputString);
+						/*	try {
+								dataOutputStream.writeUTF(outputString);
+							} catch (IOException e) {
+								// TODO Auto-generated catch block
+								System.out.println("송신중 문제발생");
+								e.printStackTrace();
+							}*/
+							gamePlay.setEndChecker(false);
+							
+						}
+						else if(gamePlay.getMessageType() == 0) // 블록 상태를 받아 전송할 때 
+						{
+							outputString = gamePlay.readBlock();
+						}
+						
+						
+						try {
+							dataOutputStream.writeUTF(outputString);
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							System.out.println("송신중 문제발생");
+							e.printStackTrace();
+						}
+						gamePlay.setCrush(0);
+						gamePlay.setMessageChecker(false);
+						
+					}
+					
+					
+				}
+				
 			}
 			
 		}
@@ -386,29 +469,76 @@ public class StartGame extends JPanel{
 			{
 				try {
 					inputString= dataInputStream.readUTF();
+				}catch(SocketException e1) {
+					break;
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
+					System.out.println("데이터 수신 실패");
 					e.printStackTrace();
 				}
 				System.out.println("서버에서 전송된 문자 : " + inputString );
 				tokenizing = inputString.split(" ");
 				
-				if(tokenizing[0].equals("b")) // 상대방 블록 받을시 
+				if(!isLogin) // 로그인 전에만 돌아감 
 				{
-					inputString = inputString.substring(4,inputString.length());
-					gamePlay.crush(Integer.parseInt(tokenizing[1]));
-					oppPanel.setBlocks(inputString);
-					System.out.println("상대 블록 읽기 : " + inputString );
+					if(tokenizing[0].equals("loginSuccess"))
+					{
+						tryLogin=false;
+						myWin = Integer.parseInt(tokenizing[1]);
+						myLose = Integer.parseInt(tokenizing[2]);
+						isLogin = true;
+						System.out.println("로그인 성공");
+						loginFrame.setVisible(false);
+						startMultiGame();
+					}
+					else if(tokenizing[0].equals("loginFailed"))
+					{
+						tryLogin=false;
+						System.out.println("로그인 실패");
+					}
+					else if(tokenizing[0].equals("SignSuccess"))
+					{
+						loginFrame.setVisible(false);
+						trySign = false;
+						isLogin = true;
+						myWin = 0;
+						myLose = 0;
+						startMultiGame();
+						System.out.println("회원가입 성공");
+					}
+					else if(tokenizing[0].equals("SignFailed"))
+					{
+						trySign = false;
+						
+						System.out.println("회원가입 실패");
+					}
 				}
-				else if(tokenizing[0].equals("w")) // 상대방 게임오버시 
+				else // 로그인 후에만 돌아감 
 				{
-					gamePlay.win();
+					if(tokenizing[0].equals("s")) // 시작 문자 발생시
+					{
+						gamePlay.startButton();
+						oppPanel.initBlocks();
+					}
+					else if(tokenizing[0].equals("g")) // 상대방 게임오버시 
+					{
+						gamePlay.win();
+					}
+					else if(tokenizing[0].equals("b")) // 상대방 블록 받을시 
+					{
+						inputString = inputString.substring(4,inputString.length());
+						gamePlay.crush(Integer.parseInt(tokenizing[1]));
+						oppPanel.setBlocks(inputString);
+						System.out.println("상대 블록 읽기 : " + inputString );
+					}
 				}
-				else if(tokenizing[0].equals("s")) // 시작 문자 발생시
-				{
-					gamePlay.startButton();
-					oppPanel.initBlocks();
-				}
+				
+				
+				
+				
+				try {
+					Thread.sleep(0);
+				}catch(Exception e) {}
 			}
 		}
 	}
@@ -423,20 +553,13 @@ public class StartGame extends JPanel{
 		{
 			
 			try {
-				 socket = new Socket("192.168.0.33" , 8877) ;
+				 socket = new Socket(serverAddress , portNumber) ;
 			     
 				 
 				 if(socket.isConnected())
 				 {
 					 System.out.println("서버와 접속이 되었습니다.");
-					 gamePlay.initGame();
-					 gamePlay.setNetworkChecker(true);
-					 oppPanel.setVisible(true);
-					 singleGameBtn.setVisible(false);
-					 multiGameBtn.setVisible(false);
-					 exitBtn.setVisible(true);
-					 gamePlay.setVisible(true);
-					 loginFrame.setVisible(false);
+					 
 				     sender = new SendThread(socket);
 				     sender.start();
 				     receiver = new ReceiveThread(socket);
@@ -482,6 +605,18 @@ public class StartGame extends JPanel{
 	public Communication getCommunication()
 	{
 		return communication;
+	}
+	
+	public void startMultiGame()
+	{
+		gamePlay.initGame();
+		 gamePlay.setNetworkChecker(true);
+		 oppPanel.setVisible(true);
+		 singleGameBtn.setVisible(false);
+		 multiGameBtn.setVisible(false);
+		 exitBtn.setVisible(true);
+		 gamePlay.setVisible(true);
+		 loginFrame.setVisible(false);
 	}
 
 }
