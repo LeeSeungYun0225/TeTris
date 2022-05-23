@@ -129,7 +129,7 @@ public class ReceiveThread extends Thread {
 					{
 						win[0] = db.getWin(tokens[1]);
 						lose[0] = db.getLose(tokens[1]);
-						sender[0].sendMessage("loginSuccess " + win[0]+" " +lose[0]);
+						sender[0].sendMessage("loginSuccess " + win[0]+" " +lose[0]+ " " + tokens[1] );
 						userId[0]=tokens[1];
 					}
 					else 
@@ -159,7 +159,7 @@ public class ReceiveThread extends Thread {
 				{
 					if(receiveClientNum == 0)
 					{
-						sender[0].sendMessage("SignSuccess");
+						sender[0].sendMessage("SignSuccess" + " " + tokens[1]);
 						userId[0]=tokens[1];
 						win[0] = lose[0] =0;
 					}
@@ -194,8 +194,8 @@ public class ReceiveThread extends Thread {
 					}catch(Exception e)
 					{}
 					
-					sender[1].sendMessage("s");
-					sender[0].sendMessage("s");	
+					sender[1].sendMessage("s"+ " "+ win[0] + " " + lose[0] + " " + userId[0]); // 상대 전적과 시작 명령 송신 
+					sender[0].sendMessage("s" + " " + win[1] + " " + lose[1] + " " + userId[1]);	
 				}
 			}
 			
@@ -220,7 +220,7 @@ public class ReceiveThread extends Thread {
 				}
 			}
 			
-			else if(isGaming==2) // 게임중에 
+			else if(isGaming==2) // 게임중에 수신하는 부분 
 			{
 
 					if(receiveClientNum == 0)
@@ -306,6 +306,7 @@ public class SendThread extends Thread {
 			try {
 				Thread.sleep(0);
 			}catch(Exception e) {}
+			
 		}
 	}
 	

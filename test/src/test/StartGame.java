@@ -11,6 +11,7 @@ import java.net.Socket;
 import java.net.SocketException;
 import java.net.UnknownHostException;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -35,9 +36,20 @@ public class StartGame extends JPanel{
 	private int myLose =0;
 	private int oppWin = 0;
 	private int oppLose=0;
+	
 	private boolean tryLogin = false;
 	private boolean trySign = false;
 	private boolean isLogin = false;
+	
+	private ImageIcon mainImage;
+	private JLabel mainImageLbl;
+	
+	private JLabel test;
+	private RecordLabel myRecordLabel,oppRecordLabel;
+	
+	private JLabel winImageLabel,loseImageLabel;
+	private final int myResultX = 0,myResultY = 0,oppResultX = 600,oppResultY = 0,resultXSize =200,resultYSize = 200;
+	private ImageIcon winImage,loseImage;
 	
 	
 	public StartGame() // 게임 시작 화면 구성 
@@ -53,9 +65,35 @@ public class StartGame extends JPanel{
 		isLogin = false;
 		
 		
-		singleGameBtn.setBounds(300,400,100,50);
-		multiGameBtn.setBounds(500,400,100,50);
-		exitBtn.setBounds(700,400,100,50);
+		winImage = new ImageIcon("Win.png");
+		loseImage = new ImageIcon("lose.png");
+		winImageLabel = new JLabel(winImage);
+		loseImageLabel = new JLabel(loseImage);
+		add(winImageLabel);
+		add(loseImageLabel);
+		winImageLabel.setVisible(false);
+		loseImageLabel.setVisible(false);
+
+		
+		myRecordLabel = new RecordLabel();
+		myRecordLabel.setBounds(0,0,200,30);
+		add(myRecordLabel);
+		
+		myRecordLabel.setVisible(false);
+		oppRecordLabel = new RecordLabel();
+		oppRecordLabel.setBounds(600,0,200,30);
+		add(oppRecordLabel);
+		oppRecordLabel.setVisible(false);
+		
+	
+		mainImage =new ImageIcon("main.png");
+		mainImageLbl = new JLabel(mainImage);
+		mainImageLbl.setBounds(150,0,600,200);
+		add(mainImageLbl);
+		
+		singleGameBtn.setBounds(300,430,100,50);
+		multiGameBtn.setBounds(500,430,100,50);
+		exitBtn.setBounds(700,430,100,50);
 		exitBtn.setVisible(false);
 		add(singleGameBtn);
 		add(multiGameBtn);
@@ -63,7 +101,7 @@ public class StartGame extends JPanel{
 		
 		gamePlay = new GamePlay();
 		
-		gamePlay.setBounds(0,0,600,500);
+		gamePlay.setBounds(0,30,600,500);
 		add(gamePlay);
 		gamePlay.setVisible(false);
 		
@@ -76,12 +114,14 @@ public class StartGame extends JPanel{
 		add(loginLabel);
 		
 		oppPanel = new OpponentPanel();
-		oppPanel.setBounds(600,0,600,500);
+		oppPanel.setBounds(600,30,600,500);
 		add(oppPanel);
 		
 		oppPanel.setVisible(false);
 		
 		
+		
+
 		
 		singleGameBtn.addActionListener(new ActionListener() { // 싱글 게임 진입 버튼 
 			public void actionPerformed(ActionEvent e) 
@@ -91,40 +131,41 @@ public class StartGame extends JPanel{
 				exitBtn.setVisible(true);
 				gamePlay.setVisible(true);
 				loginFrame.setVisible(false);
-				
+				mainImageLbl.setVisible(false);
 			}
 		});
 		
 		
 		exitBtn.addActionListener(new ActionListener() { // 게임 도중 나가기 버튼 
 			public void actionPerformed(ActionEvent e)
-			{
-				isLogin = false;
+			{		
 				singleGameBtn.setVisible(true);
 				multiGameBtn.setVisible(true);
 				exitBtn.setVisible(false);
 				gamePlay.setVisible(false);
 				gamePlay.initGame();
+				oppPanel.setVisible(false);
+				oppRecordLabel.setVisible(false);
+				myRecordLabel.setVisible(false);
 				if(gamePlay.getNetworkChecker())
 				{
-					gameOverThrow= true;
+					
 					gamePlay.setNetworkChecker(false);
 					try {
 						communication.endCommunication();
 					}catch(NullPointerException e1) {}
-				}
-				
-				
-				
-				
-				
+				}	
+				isLogin = false;
+				mainImageLbl.setVisible(true);
 			}
 		});
 		
 		multiGameBtn.addActionListener(new ActionListener() { // 멀티 게임 진입 버튼 
 			public void actionPerformed(ActionEvent e)
 			{
+
 				Communication communication = new Communication();
+				System.out.println("서버 연결 시도");
 				loginFrame.setVisible(true);
 			}
 		});
@@ -375,21 +416,28 @@ public class StartGame extends JPanel{
 							outputString = "s";
 							System.out.println("메세지 전송 : " + outputString);
 							gamePlay.setMessageType(0);
-							
+							exitBtn.setVisible(false);
+							winImageLabel.setVisible(false);
+							loseImageLabel.setVisible(false);
 						}
-						else if(gamePlay.getEndChecker() || gameOverThrow) // 게임오버시 
+						else if(gamePlay.getEndChecker()) // 게임오버시 
 						{
 							outputString = "g";
 							System.out.println("메세지 전송 : " + outputString);
-						/*	try {
-								dataOutputStream.writeUTF(outputString);
-							} catch (IOException e) {
-								// TODO Auto-generated catch block
-								System.out.println("송신중 문제발생");
-								e.printStackTrace();
-							}*/
+							myLose++;
+							oppWin++;
+							myRecordLabel.setLose(myLose);
+							oppRecordLabel.setWin(oppWin);
 							gamePlay.setEndChecker(false);
-							
+							exitBtn.setVisible(true);
+							winImageLabel.setVisible(true);
+							loseImageLabel.setVisible(true);
+							winImageLabel.setBounds(oppResultX,oppResultY,resultXSize,resultYSize);
+							loseImageLabel.setBounds(myResultY,myResultY,resultXSize,resultYSize);
+						}
+						else if(gameOverThrow)
+						{
+							System.out.println("check");
 						}
 						else if(gamePlay.getMessageType() == 0) // 블록 상태를 받아 전송할 때 
 						{
@@ -490,6 +538,12 @@ public class StartGame extends JPanel{
 						System.out.println("로그인 성공");
 						loginFrame.setVisible(false);
 						startMultiGame();
+						mainImageLbl.setVisible(false);
+						myRecordLabel.setVisible(true);
+						myRecordLabel.setWin(myWin);
+						myRecordLabel.setLose(myLose);
+						myRecordLabel.setId(myId);
+						
 					}
 					else if(tokenizing[0].equals("loginFailed"))
 					{
@@ -503,8 +557,13 @@ public class StartGame extends JPanel{
 						isLogin = true;
 						myWin = 0;
 						myLose = 0;
+						myRecordLabel.setVisible(true);
+						myRecordLabel.setWin(myWin);
+						myRecordLabel.setLose(myLose);
+						myRecordLabel.setId(myId);
 						startMultiGame();
 						System.out.println("회원가입 성공");
+						mainImageLbl.setVisible(false);
 					}
 					else if(tokenizing[0].equals("SignFailed"))
 					{
@@ -517,12 +576,29 @@ public class StartGame extends JPanel{
 				{
 					if(tokenizing[0].equals("s")) // 시작 문자 발생시
 					{
+						oppWin = Integer.parseInt(tokenizing[1]);
+						oppLose = Integer.parseInt(tokenizing[2]);
+						oppId = tokenizing[3];
+						oppRecordLabel.setWin(oppWin);
+						oppRecordLabel.setLose(oppLose);
+						oppRecordLabel.setId(oppId);
+						oppRecordLabel.setVisible(true);
+						
 						gamePlay.startButton();
 						oppPanel.initBlocks();
 					}
 					else if(tokenizing[0].equals("g")) // 상대방 게임오버시 
 					{
 						gamePlay.win();
+						exitBtn.setVisible(true);
+						myWin++;
+						oppLose++;
+						myRecordLabel.setWin(myWin);
+						oppRecordLabel.setLose(oppLose);
+						winImageLabel.setVisible(true);
+						winImageLabel.setBounds(myResultX,myResultY,resultXSize,resultYSize);
+						loseImageLabel.setBounds(oppResultX,oppResultY,resultXSize,resultYSize);	
+						loseImageLabel.setVisible(true);
 					}
 					else if(tokenizing[0].equals("b")) // 상대방 블록 받을시 
 					{
@@ -548,6 +624,18 @@ public class StartGame extends JPanel{
 		private Socket socket;
 		private SendThread sender;
 		private ReceiveThread receiver;
+		
+		public boolean isConnected()
+		{
+			if(socket.isConnected() && sender.isAlive() && receiver.isAlive())
+			{
+				return true;
+			}
+			else 
+			{
+				return false;
+			}
+		}
 		
 		public Communication()
 		{

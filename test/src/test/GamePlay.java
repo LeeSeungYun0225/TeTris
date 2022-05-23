@@ -31,7 +31,7 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 
 	private int messageType = 0;
 	
-
+	
 
 	public GamePlay() {
 		canStart = true;
@@ -53,6 +53,9 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				
 			}
 		});
+		
+		
+		
 		startButton.setBounds(50, 150, 100, 50);
 
 		finalCrush = 0;
@@ -122,8 +125,6 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 		backgroundSound = new File("BackGround.wav");
 		crushSound = new File("crush.wav");
 		gameoverSound = new File("gameover.wav");
-			
-	
 
 	}
 	
@@ -5431,7 +5432,10 @@ public class GamePlay extends JPanel implements KeyListener, Runnable {
 				throwNetworkData();
 				break;
 			}	
+			
+			
 		}
+		GameoverCheck();	
 	}
 	
 	public int getMessageType()

@@ -152,7 +152,7 @@ public class DBConnection {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}catch(NullPointerException e1) {}
 		
 		return false;
 		
